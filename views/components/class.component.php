@@ -8,7 +8,7 @@
     <title>Student</title>
 </head>
 <body>
-<header>
+    <header>
         <nav class='nav'>
             <a href="student.component.php"><li class='shadow-pop-tr'>Create Student</li></a>
             <a href="teacher.component.php"><li class='shadow-pop-tr'>Create Teacher</li></a>
@@ -16,15 +16,15 @@
         </nav>
     </header>
  <div class='container'>
-     <h2 class='title'>create student</h2>
+     <h2 class='title'>Create Class</h2>
     <form class='form' action="">
-        <input type="text" name='studentName' placeholder='Name'>
-        <input type="email" name='email' placeholder='Email'>
+        <input type="text" name='ClassName' placeholder='Class Name'>
+        <input type="text" name='location' placeholder='Location'>
         <select name="class">
-            <option value="">Select teacher</option>
+            <option value="">Teacher</option>
         </select>
-        <select name="teacher">
-            <option value="">Select class</option>
+        <select name="class">
+            <option value="">Students</option>
         </select>
         <button>Submit</button>
     </form>
