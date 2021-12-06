@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 360px;
+    padding: 8% 0 0;
+    margin: auto;
+    text-align: center;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    background:linear-gradient(112deg, rgba(0, 0, 130, 0.93) 0%, rgba(190, 0, 214, 1) 100%);
+    background-repeat: no-repeat;
+}
+
+.form {
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.form input {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.form button {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background:linear-gradient(112deg, rgba(0, 0, 130, 0.93) 0%, rgba(190, 0, 214, 1) 100%);
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #ffffff;
+    font-size: 16px;
+    transition: all 0.8 ease;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.form button:hover {
+    background:linear-gradient(112deg, rgba(0, 0, 124, 0.93) 0%,rgb(56, 0, 63) 100%);
+    transition: all 0.8 ease;
+}
+
+.form select {
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+}
+
+.title {
+    color: #ffffff;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
