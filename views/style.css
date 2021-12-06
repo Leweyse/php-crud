@@ -4,27 +4,32 @@
     box-sizing: border-box;
 }
 
-.container {
-    padding: 3% 0 0;
-    margin: auto;
-    text-align: center;
-}
-
 html {
     height: 100%;
 }
 
 body {
+    height: 100%;
     background:linear-gradient(112deg, rgba(0, 0, 130, 0.93) 0%, rgba(190, 0, 214, 1) 100%);
     background-repeat: no-repeat;
 }
 
+.container {
+    display: grid;
+    width: 100%;
+    height: 100%;
+
+    padding: 12% 0 5% 0;
+
+    grid-template-rows: 1fr;
+    place-items: center;
+}
+
 .form {
-  max-width: 360px;
-  margin: 0 auto 100px;
-  padding: 45px;
-  text-align: center;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    max-width: 360px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
 .form input {
@@ -74,9 +79,12 @@ body {
 }
 
 .nav {
+    position: absolute;
     display: flex;
+    width: 100%;
+    margin: 10px 0px;
+    padding: 10px;
     justify-content: space-around;
-    margin: 20px 0px;
 }
 
 .nav li {
@@ -85,7 +93,6 @@ body {
     padding: 40px;
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
-    margin-bottom: 20px;
     font-weight: bold;
     cursor: pointer;
     transition: 0.6s;
@@ -100,61 +107,64 @@ a {
     text-decoration: none;
 }
 
- @-webkit-keyframes shadow-pop-tr {
+@-webkit-keyframes shadow-pop-tr {
     0% {
-      -webkit-box-shadow: 0 0 #2f00ff, 0 0 #2f00ff, 0 0 #2f00ff, 0 0 #2f00ff, 0 0 #2f00ff, 0 0 #2f00ff, 0 0 #2f00ff, 0 0 #2f00ff;
-              box-shadow: 0 0 #2f00ff, 0 0 #2f00ff, 0 0 #2f00ff, 0 0 #2f00ff, 0 0 #2f00ff, 0 0 #2f00ff, 0 0 #2f00ff, 0 0 #2f00ff;
-      -webkit-transform: translateX(0) translateY(0);
-              transform: translateX(0) translateY(0);
+        -webkit-box-shadow: 0 0 #2f00ff, 0 0 #2f00ff, 0 0 #2f00ff, 0 0 #2f00ff, 0 0 #2f00ff, 0 0 #2f00ff, 0 0 #2f00ff, 0 0 #2f00ff;
+                box-shadow: 0 0 #2f00ff, 0 0 #2f00ff, 0 0 #2f00ff, 0 0 #2f00ff, 0 0 #2f00ff, 0 0 #2f00ff, 0 0 #2f00ff, 0 0 #2f00ff;
+        -webkit-transform: translateX(0) translateY(0);
+                transform: translateX(0) translateY(0);
     }
     100% {
-      -webkit-box-shadow: 1px -1px #2f00ff, 2px -2px #2f00ff, 3px -3px #2f00ff, 4px -4px #2f00ff, 5px -5px #2f00ff, 6px -6px #2f00ff, 7px -7px #2f00ff, 8px -8px #2f00ff;
-              box-shadow: 1px -1px #2f00ff, 2px -2px #2f00ff, 3px -3px #2f00ff, 4px -4px #2f00ff, 5px -5px #2f00ff, 6px -6px #2f00ff, 7px -7px #2f00ff, 8px -8px #2f00ff;
-      -webkit-transform: translateX(-8px) translateY(8px);
-              transform: translateX(-8px) translateY(8px);
+        -webkit-box-shadow: 1px -1px #2f00ff, 2px -2px #2f00ff, 3px -3px #2f00ff, 4px -4px #2f00ff, 5px -5px #2f00ff, 6px -6px #2f00ff, 7px -7px #2f00ff, 6px -6px #2f00ff;
+                box-shadow: 1px -1px #2f00ff, 2px -2px #2f00ff, 3px -3px #2f00ff, 4px -4px #2f00ff, 5px -5px #2f00ff, 6px -6px #2f00ff, 7px -7px #2f00ff, 6px -6px #2f00ff;
+        -webkit-transform: translateX(-6px) translateY(6px);
+                transform: translateX(-6px) translateY(6px);
     }
-  }
-  @keyframes shadow-pop-tr {
+}
+@keyframes shadow-pop-tr {
     0% {
-      -webkit-box-shadow: 0 0 #2f00ff, 0 0 #2f00ff, 0 0 #2f00ff, 0 0 #2f00ff, 0 0 #2f00ff, 0 0 #2f00ff, 0 0 #2f00ff, 0 0 #2f00ff;
-              box-shadow: 0 0 #2f00ff, 0 0 #2f00ff, 0 0 #2f00ff, 0 0 #2f00ff, 0 0 #2f00ff, 0 0 #2f00ff, 0 0 #2f00ff, 0 0 #2f00ff;
-      -webkit-transform: translateX(0) translateY(0);
-              transform: translateX(0) translateY(0);
+        -webkit-box-shadow: 0 0 #2f00ff, 0 0 #2f00ff, 0 0 #2f00ff, 0 0 #2f00ff, 0 0 #2f00ff, 0 0 #2f00ff, 0 0 #2f00ff, 0 0 #2f00ff;
+                box-shadow: 0 0 #2f00ff, 0 0 #2f00ff, 0 0 #2f00ff, 0 0 #2f00ff, 0 0 #2f00ff, 0 0 #2f00ff, 0 0 #2f00ff, 0 0 #2f00ff;
+        -webkit-transform: translateX(0) translateY(0);
+                transform: translateX(0) translateY(0);
     }
     100% {
-      -webkit-box-shadow: 1px -1px #2f00ff, 2px -2px #2f00ff, 3px -3px #2f00ff, 4px -4px #2f00ff, 5px -5px #2f00ff, 6px -6px #2f00ff, 7px -7px #2f00ff, 8px -8px #2f00ff;
-              box-shadow: 1px -1px #2f00ff, 2px -2px #2f00ff, 3px -3px #2f00ff, 4px -4px #2f00ff, 5px -5px #2f00ff, 6px -6px #2f00ff, 7px -7px #2f00ff, 8px -8px #2f00ff;
-      -webkit-transform: translateX(-8px) translateY(8px);
-              transform: translateX(-8px) translateY(8px);
+        -webkit-box-shadow: 1px -1px #2f00ff, 2px -2px #2f00ff, 3px -3px #2f00ff, 4px -4px #2f00ff, 5px -5px #2f00ff, 6px -6px #2f00ff, 7px -7px #2f00ff, 6px -6px #2f00ff;
+                box-shadow: 1px -1px #2f00ff, 2px -2px #2f00ff, 3px -3px #2f00ff, 4px -4px #2f00ff, 5px -5px #2f00ff, 6px -6px #2f00ff, 7px -7px #2f00ff, 6px -6px #2f00ff;
+        -webkit-transform: translateX(-6px) translateY(6px);
+                transform: translateX(-6px) translateY(6px);
     }
-  }
+}
 
-  nav {
-      box-shadow: 0px 3px 13px -7px #000000, -50px 42px 8px -8px rgba(0,0,0,0);
-  }
-  
-  table{
+nav {
+    box-shadow: 0px 3px 13px -7px #000000, -50px 42px 6px -6px rgba(0,0,0,0);
+}
+
+table{
     width: 100%;
     font-family: "Roboto", sans-serif;
     border-spacing: 0px;
-  }
-  .tbl-header th{
+}
+.tbl-header th{
     background-color: rgba(255,255,255,0.3);
-   }
-  .tbl-content{
+}
+
+.tbl-content{
     overflow-x:auto;
     margin-top: 0px;
     border: 1px solid rgba(255,255,255,0.3);
-  }
-  th{
+}
+
+th{
     padding: 20px 15px;
     text-align: left;
     font-weight: 500;
     font-size: 12px;
     color: #fff;
     text-transform: uppercase;
-  }
-  td{
+}
+
+td{
     padding: 15px;
     text-align: left;
     vertical-align:middle;
@@ -162,7 +172,7 @@ a {
     font-size: 16px;
     color: #fff;
     border-bottom: solid 1px rgba(255,255,255,0.1);
-  }
+}
 
 ::-webkit-scrollbar {
     width: 6px;

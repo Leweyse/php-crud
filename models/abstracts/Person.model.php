@@ -2,15 +2,15 @@
 
 Class Person
 {
-    private string $name;
-    private string $email;
+    private $name;
+    private $email;
 
-    public function setName(string $name): void
+    public function setName($name): void
     {
         $this->name = $name;
     }
 
-    public function setEmail(string $email): void
+    public function setEmail($email): void
     {
         $this->email = $email;
     }

@@ -33,20 +33,26 @@ $hostname = getenv('HOSTNAME');
 $conn = new Connection($hostname, $username, $password, $database);
 $data = new Data($conn);
 
+// $data->setOne(2, "student");
+// var_dump($data->getOne());
+
+// $data->setAll("student");
+// var_dump($data->getAll());
+
 require "controllers/student.controller.php";
 require "controllers/teacher.controller.php";
 require "controllers/class.controller.php";
 
-if (isset($_GET['student'])) {
-    $controller = new studentController();
-}
+// if (isset($_GET['student'])) {
+//     $controller = new studentController();
+// }
 
-if (isset($_GET['teacher'])) {
-    $controller = new teacherController();
-}
+// if (isset($_GET['teacher'])) {
+//     $controller = new teacherController();
+// }
 
-if (isset($_GET['class'])) {
-    $controller = new classController();
-}
+// if (isset($_GET['class'])) {
+//     $controller = new classController();
+// }
 
-$controller->render($_GET, $_POST);
+// $controller->render($_GET, $_POST);

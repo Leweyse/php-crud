@@ -1,8 +1,6 @@
 <?php
 declare(strict_types = 1);
 
-whatIsHappening();
-
 class classController
 {
     //render function with both $_GET and $_POST vars available if it would be needed.

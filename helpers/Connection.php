@@ -12,12 +12,12 @@ class Connection
         $this->conn = new mysqli($hostname, $username, $password, $database);
     }
 
-    public function testConnection (): void
-    {
-        if ($this->conn->connect_error) {
-            die("Connection failed: " . $this->conn->connect_error);
-        }
-    }
+    // public function testConnection (): void
+    // {
+    //     if ($this->conn->connect_error) {
+    //         die("Connection failed: " . $this->conn->connect_error);
+    //     }
+    // }
 
     // SetData method
     public function setData(int $id, string $table, array $arrElem, $class)
@@ -34,7 +34,7 @@ class Connection
             }
         }
 
-        $columns = $this->conn->query("SELECT $string FROM $table WHERE id = $id");
+        $columns = $this->conn->query("SELECT $string FROM $table WHERE S_ID = $id");
         $row = $columns->fetch_assoc();
 
         $arrTemp = [];

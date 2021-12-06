@@ -1,8 +1,6 @@
 <?php
 declare(strict_types = 1);
 
-whatIsHappening();
-
 class studentController
 {
     //render function with both $_GET and $_POST vars available if it would be needed.
@@ -28,7 +26,6 @@ class studentController
 
         if ($GET === 'update') {
             if ($_SERVER["REQUEST_METHOD"] === "POST") {
-                var_dump($POST["studentName"]);
                 $POST["studentName"];
                 $POST["email"];
                 $POST["class"];
@@ -36,6 +33,6 @@ class studentController
             }
         }
 
-        require "views/components/student.component.php";
+        require "views/createComponents/student.component.php";
     }
 }

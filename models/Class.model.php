@@ -2,29 +2,23 @@
 
 Class ClassInfo
 {
-    private string $name;
-    private string $location;
-    private string $teacher;
-    private string $listStudents;
+    private $name;
+    private $location;
+    private $class_id;
 
-    public function setName(string $name): void
+    public function setName($name): void
     {
         $this->name = $name;
     }
 
-    public function setLocation(string $location): void
+    public function setLocation($location): void
     {
         $this->location = $location;
     }
 
-    public function setTeacher(string $teacher): void
+    public function setClassId($class_id): void
     {
-        $this->teacher = $teacher;
-    }
-
-    public function setListStudents(string $listStudents): void
-    {
-        $this->listStudents = $listStudents;
+        $this->class_id = $class_id;
     }
 
     public function getName()
@@ -37,13 +31,8 @@ Class ClassInfo
         return $this->location;
     }
 
-    public function getTeacher()
+    public function getClassId()
     {
-        return $this->teacher;
-    }
-
-    public function getListStudents()
-    {
-        return $this->listStudents;
+        return $this->class_id;
     }
 }
