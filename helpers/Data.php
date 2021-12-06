@@ -2,30 +2,38 @@
 
 class Data
 {
-
-    private array $allStudents;
+    private array $all;
 
     private Student $student;
+    private Teacher $teacher;
+    private ClassInfo $classInfo;
+
+    private array $model;
 
     public function __construct($conn)
     {
         $this->conn = $conn;
+        $this->student = new Student();
+        $this->teacher = new Teacher();
+        $this->classIn = new classInfo();
+
+        $this->model = [$this->student, $this->teacher, $this->classInfo];
     }
 
-    public function setAllStudents(): void
+    public function setAll($table, array $content, $modelIdx): void
     {
-        // $colLength = (int)$this->conn->getColLength("student");
+        $colLength = (int)$this->conn->getColLength($table);
 
-        // for ($i = 1; $i <= $colLength; $i++) {
-        //     $this->conn->setData($i, "student", ["name", "email", "class", "teacher"], $this->student);
-        // }
+        for ($i = 1; $i <= $colLength; $i++) {
+            $this->conn->setData($i, $table, $content, $this->model[$modelIdx]);
+        }
 
-        // $this->allStudents = $this->conn->getData();
-        // $this->conn->clearData();
+        $this->all = $this->conn->getData();
+        $this->conn->clearData();
     }
 
-    public function getAllStudents(): array
+    public function getAll(): array
     {
-        return $this->allStudents;
+        return $this->all;
     }
 }

@@ -30,12 +30,25 @@ $username = getenv('USERNAME');
 $database = getenv('DATABASE');
 $hostname = getenv('HOSTNAME');
 
-// $conn = new Connection($hostname, $username, $password, $database);
-// $data = new Data($conn);
+$conn = new Connection($hostname, $username, $password, $database);
+$data = new Data($conn);
+
+require "controllers/student.controller.php";
+require "controllers/teacher.controller.php";
+require "controllers/class.controller.php";
 
 if (isset($_GET['student'])) {
-    require "controllers/student.controller.php";
-    require "views/components/student.component.php";
+    $controller = new studentController();
 }
+
+if (isset($_GET['teacher'])) {
+    $controller = new teacherController();
+}
+
+if (isset($_GET['class'])) {
+    $controller = new classController();
+}
+
+$controller->render($_GET, $_POST);
 
 ?>

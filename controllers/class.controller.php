@@ -3,14 +3,14 @@ declare(strict_types = 1);
 
 whatIsHappening();
 
-class studentController
+class classController
 {
     //render function with both $_GET and $_POST vars available if it would be needed.
     public function render(array $GET, array $POST)
     {
         if ($GET === 'add') {
             if ($_SERVER["REQUEST_METHOD"] === "POST") {
-                $POST["studentName"];
+                $POST["className"];
                 $POST["email"];
                 $POST["class"];
                 $POST["teacher"];
@@ -19,7 +19,7 @@ class studentController
 
         if ($GET === 'remove') {
             if ($_SERVER["REQUEST_METHOD"] === "POST") {
-                $POST["studentName"];
+                $POST["className"];
                 $POST["email"];
                 $POST["class"];
                 $POST["teacher"];
@@ -28,14 +28,13 @@ class studentController
 
         if ($GET === 'update') {
             if ($_SERVER["REQUEST_METHOD"] === "POST") {
-                var_dump($POST["studentName"]);
-                $POST["studentName"];
+                $POST["className"];
                 $POST["email"];
                 $POST["class"];
                 $POST["teacher"];
             }
         }
 
-        require "views/components/student.component.php";
+        require "views/components/class.component.php";
     }
 }
