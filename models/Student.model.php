@@ -1,27 +1,49 @@
 <?php
 
-Class Student extends Person
+Class Student
 {
-    private string $class;
-    private string $teacher;
+    private $student_id;
+    private $name;
+    private $email;
+    private $class_id;
 
-    public function setClass(string $class): void
+    public function setStudentId($student_id): void
     {
-        $this->class = $class;
+        $this->student_id = $student_id;
     }
 
-    public function setTeacher(string $teacher): void
+    public function setName($name): void
     {
-        $this->teacher = $teacher;
+        $this->name = $name;
     }
 
-    public function getClass()
+    public function setEmail($email): void
     {
-        return $this->class;
+        $this->email = $email;
     }
 
-    public function getTeacher()
+    public function setClassId($class_id): void
     {
-        return $this->teacher;
+        $this->class_id = $class_id;
+    }
+
+    public function getStudentId()
+    {
+        return $this->student_id;
+    }
+
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    public function getClassId()
+    {
+        return $this->class_id;
     }
 }

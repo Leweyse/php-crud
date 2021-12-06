@@ -15,24 +15,22 @@ class Data
         $this->conn = $conn;
         $this->student = new Student();
         $this->teacher = new Teacher();
-        $this->classIn = new classInfo();
-
-        $this->model = [$this->student, $this->teacher, $this->classInfo];
+        $this->classInfo = new ClassInfo();
     }
 
-    public function setAll($table, array $content, $modelIdx): void
+    public function setAllStudents(): void
     {
-        $colLength = (int)$this->conn->getColLength($table);
+        $colLength = (int)$this->conn->getColLength("student");
 
         for ($i = 1; $i <= $colLength; $i++) {
-            $this->conn->setData($i, $table, $content, $this->model[$modelIdx]);
+            $this->conn->setData($i, "student", ["S_ID", "Name", "Email", "C_ID"], $this->student);
         }
 
         $this->all = $this->conn->getData();
         $this->conn->clearData();
     }
 
-    public function getAll(): array
+    public function getAllStudents(): array
     {
         return $this->all;
     }

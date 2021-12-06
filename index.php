@@ -50,5 +50,3 @@ if (isset($_GET['class'])) {
 }
 
 $controller->render($_GET, $_POST);
-
-?>
