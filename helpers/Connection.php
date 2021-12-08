@@ -13,14 +13,14 @@ class Connection
     }
 
     // SetData method
-    public function selectData(int $id, string $table, array $arrElem, $class)
+    public function selectData(int $id, string $table, array $column, $class)
     {
         $methods = get_class_methods($class);
 
         $string = '';
 
-        foreach($arrElem as $key => $elem) {
-            if ($key === count($arrElem) - 1) {
+        foreach($column as $key => $elem) {
+            if ($key === count($column) - 1) {
                 $string .= $elem;
             } else {
                 $string .= $elem . ",";
@@ -33,10 +33,10 @@ class Connection
         $arrTemp = [];
 
         foreach ($methods as $key => $value) {
-            if ($key < count($arrElem)) {
-                $class -> $value($row[(string)$arrElem[$key]]);
+            if ($key < count($column)) {
+                $class -> $value($row[(string)$column[$key]]);
             } else {
-                $arrTemp[$arrElem[$key % (count($methods) / 2)]] = $class -> $value();
+                $arrTemp[$column[$key % (count($methods) / 2)]] = $class -> $value();
                 if (count($arrTemp) === count($methods) / 2) {
                     $this->arrayData[] = $arrTemp;
                     return $arrTemp;
@@ -99,14 +99,14 @@ class Connection
         }
     }
 
-    public function updateData(int $id, array $values, string $table, array $column, $class)
+    public function updateData(int $id, array $values, string $table, array $columns, $class)
     {
         $methods = get_class_methods($class);
 
         $string = '';
 
-        foreach($column as $key => $elem) {
-            if ($key === count($column) - 1) {
+        foreach($columns as $key => $elem) {
+            if ($key === count($columns) - 1) {
                 $string .= $elem."=".$values[$key];
             } else {
                 $string .= $elem."=".$values[$key] . ",";
@@ -114,21 +114,43 @@ class Connection
         }
 
         $data = $this->conn->query("UPDATE $table SET $string WHERE id=$id");
-        // $row = $columns->fetch_assoc();
-        // var_dump($row);
-        // $arrTemp = [];
 
-        // foreach ($methods as $key => $value) {
-        //     if ($key < count($column)) {
-        //         $class -> $value($row[(string)$column[$key]]);
-        //     } else {
-        //         $arrTemp[$column[$key % (count($methods) / 2)]] = $class -> $value();
-        //         if (count($arrTemp) === count($methods) / 2) {
-        //             $this->arrayData[] = $arrTemp;
-        //             return $arrTemp;
-        //         }
-        //     }
-        // }
+        $info = [];
+
+        foreach ($columns as $key => $value) {
+            $info[$value] = $values[$key];
+        }
+
+        $arrTemp = [];
+
+        foreach ($methods as $key => $value) {
+            if ($key < count($columns)) {
+                $class -> $value($info[(string)$columns[$key]]);
+            } else {
+                $arrTemp[$columns[$key % (count($methods) / 2)]] = $class -> $value();
+                if (count($arrTemp) === count($methods) / 2) {
+                    $this->arrayData[] = $arrTemp;
+                    return $arrTemp;
+                }
+            }
+        }
+    }
+
+    public function deleteData(int $id, string $table, array $column, $class)
+    {
+        $methods = get_class_methods($class);
+
+        $string = '';
+
+        foreach($column as $key => $elem) {
+            if ($key === count($column) - 1) {
+                $string .= $elem;
+            } else {
+                $string .= $elem . ",";
+            }
+        }
+
+        $data = $this->conn->query("DELETE FROM $table WHERE id = $id");
     }
 
     public function getData(): array

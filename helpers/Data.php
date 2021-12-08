@@ -34,19 +34,19 @@ class Data
         );
     }
 
-    public function setOne($i, $table): void
+    public function selectOne($i, $table): void
     {
-        $this->conn->setData($i, $table, $this->model->{$table}->{"columns"}, $this->model->{$table}->{"class"});
+        $this->conn->selectData($i, $table, $this->model->{$table}->{"columns"}, $this->model->{$table}->{"class"});
         $this->one = $this->conn->getData();
         $this->conn->clearData();
     }
 
-    public function setAll($table): void
+    public function selectAll($table): void
     {
         $colLength = (int)$this->conn->getColLength($table);
 
         for ($i = 1; $i <= $colLength; $i++) {
-            $this->conn->setData($i, $table, $this->model->{$table}->{"columns"}, $this->model->{$table}->{"class"});
+            $this->conn->selectData($i, $table, $this->model->{$table}->{"columns"}, $this->model->{$table}->{"class"});
         }
 
         $this->all = $this->conn->getData();
@@ -61,6 +61,11 @@ class Data
     public function updateOne($id, $values, $table): void
     {
         $this->conn->updateData($id, $values, $table, $this->model->{$table}->{"columns"}, $this->model->{$table}->{"class"});
+    }
+
+    public function deleteOne($id, $table): void
+    {
+        $this->conn->deleteData($id, $table, $this->model->{$table}->{"columns"}, $this->model->{$table}->{"class"});
     }
 
     public function getOne(): array
