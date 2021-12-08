@@ -40,7 +40,7 @@ $data = new Data($conn);
 // var_dump($data->getAll());
 
 // $data->insertOne(["9","Lucas", "aaa@aaa.com", "101"], "student");
-$data->updateOne(3, ["3","Lucas", "aaa@aaa.com", "201"], "student");
+// $data->updateOne(3, ["3","Lucas", "aaa@aaa.com", "201"], "student");
 // $data->deleteOne(2, "student");
 
 require "controllers/student.controller.php";

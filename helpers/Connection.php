@@ -114,7 +114,6 @@ class Connection
         }
 
         $data = $this->conn->query("UPDATE $table SET $string WHERE id=$id");
-        var_dump("UPDATE $table SET $string WHERE id=$id");
 
         $info = [];
 
