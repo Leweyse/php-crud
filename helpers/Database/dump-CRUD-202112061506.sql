@@ -37,7 +37,7 @@ CREATE TABLE `CLASS` (
 
 LOCK TABLES `CLASS` WRITE;
 /*!40000 ALTER TABLE `CLASS` DISABLE KEYS */;
-INSERT INTO `CLASS` VALUES (1,'Lammar','Antwerp',1),(2,'Giertz','Gent',2),(3,'Giertz','Antwerp',3),(4,'Lammar','Brussels',4);
+INSERT INTO `CLASS` VALUES (1,'Lammar','Antwerp',101),(2,'Giertz','Gent',102),(3,'Giertz','Antwerp',201),(4,'Lammar','Brussels',202);
 /*!40000 ALTER TABLE `CLASS` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -64,7 +64,7 @@ CREATE TABLE `STUDENT` (
 
 LOCK TABLES `STUDENT` WRITE;
 /*!40000 ALTER TABLE `STUDENT` DISABLE KEYS */;
-INSERT INTO `STUDENT` VALUES (1,'zain','zenimtiaz@gmail.com',1),(2,'Daryle','darylbecode@gmail.com',1),(3,'sofiane','sofianebecode@gmail.com',1),(4,'neha','nehabecode@gmail.com',2),(5,'nama','namabecode@gmail.com',2);
+INSERT INTO `STUDENT` VALUES (1,'zain','zenimtiaz@gmail.com',101),(2,'Daryle','darylbecode@gmail.com',102),(3,'sofiane','sofianebecode@gmail.com',101),(4,'neha','nehabecode@gmail.com',202),(5,'nama','namabecode@gmail.com',201);
 /*!40000 ALTER TABLE `STUDENT` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -89,7 +89,7 @@ CREATE TABLE `TEACHER` (
 
 LOCK TABLES `TEACHER` WRITE;
 /*!40000 ALTER TABLE `TEACHER` DISABLE KEYS */;
-INSERT INTO `TEACHER` VALUES (1,'Tim','timbroos@gmail.com',1),(2,'sicco','siccosmith@gmail.com',1),(3,'sharron','sharon@gmail.com',2),(4,'Nick','nickbecode.com',2);
+INSERT INTO `TEACHER` VALUES (1,'Tim','timbroos@gmail.com',101),(2,'sicco','siccosmith@gmail.com',102),(3,'sharron','sharon@gmail.com',201),(4,'Nick','nickbecode.com',202);
 /*!40000 ALTER TABLE `TEACHER` ENABLE KEYS */;
 UNLOCK TABLES;
 

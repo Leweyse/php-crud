@@ -53,6 +53,16 @@ class Data
         $this->conn->clearData();
     }
 
+    public function insertOne($values, $table): void
+    {
+        $this->conn->insertData($values, $table, $this->model->{$table}->{"columns"}, $this->model->{$table}->{"class"});
+    }
+
+    public function updateOne($id, $values, $table): void
+    {
+        $this->conn->updateData($id, $values, $table, $this->model->{$table}->{"columns"}, $this->model->{$table}->{"class"});
+    }
+
     public function getOne(): array
     {
         return $this->one;

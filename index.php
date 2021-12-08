@@ -36,8 +36,11 @@ $data = new Data($conn);
 // $data->setOne(1, "class");
 // var_dump($data->getOne());
 
-$data->setAll("class");
-var_dump($data->getAll());
+// $data->setAll("class");
+// var_dump($data->getAll());
+
+// $data->insertOne(["9","Lucas", "aaa@aaa.com", "2"], "student");
+// $data->updateOne(1, ["9","Lucas", "aaa@aaa.com", "2"], "student");
 
 require "controllers/student.controller.php";
 require "controllers/teacher.controller.php";
