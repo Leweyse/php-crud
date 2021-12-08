@@ -1,11 +1,11 @@
 <?php
- require('./header.php');
- require('./displayComponent.php');
+ require('../overViewComponents/header.php');
+ require('../overViewComponents/displayComponent.php');
 ?>
 
 <div class='container'>
 <h2 class='title'>Classes</h2>
-<a class='addBtn' href='../createComponents/class.component.php'>+ Create class</a>
+<a class='addBtn' href='./createClass.php'>+ Create class</a>
 <section>
 <div class="tbl-header">
     <table >
