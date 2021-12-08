@@ -6,9 +6,6 @@
     <form class='form' action="">
         <input type="text" name='name' placeholder='Name'>
         <input type="email" name='email' placeholder='Email'>
-        <select name="selectTeacher">
-            <option value="">Select teacher</option>
-        </select>
         <select name="selectClass">
             <option value="">Select class</option>
         </select>

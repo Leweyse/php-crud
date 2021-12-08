@@ -7,9 +7,7 @@
      <form class='form' action="">
         <input type="text" name='ClassName' placeholder='Class Name'>
         <input type="text" name='location' placeholder='Location'>
-        <select name="class">
-            <option value="">Teacher</option>
-        </select>
+        <input type="text" name='classCode' placeholder='101-106'>
         <button>Edit</button>
     </form>
  </div>
