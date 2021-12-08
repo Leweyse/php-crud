@@ -23,10 +23,11 @@ DROP TABLE IF EXISTS `CLASS`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `CLASS` (
-  `ClassName` varchar(100) DEFAULT NULL,
-  `Location` varchar(100) DEFAULT NULL,
-  `C_ID` int(11) NOT NULL,
-  PRIMARY KEY (`C_ID`)
+  `id` int(11) NOT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  `location` varchar(100) DEFAULT NULL,
+  `c_id` int(11) NOT NULL,
+  PRIMARY KEY (`c_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -36,7 +37,7 @@ CREATE TABLE `CLASS` (
 
 LOCK TABLES `CLASS` WRITE;
 /*!40000 ALTER TABLE `CLASS` DISABLE KEYS */;
-INSERT INTO `CLASS` VALUES ('Lammar','Antwerp',1),('Giertz','Gent',2),('Giertz','Antwerp',3),('Lammar','Brussels',4);
+INSERT INTO `CLASS` VALUES (1,'Lammar','Antwerp',101),(2,'Giertz','Gent',102),(3,'Giertz','Antwerp',201),(4,'Lammar','Brussels',202);
 /*!40000 ALTER TABLE `CLASS` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -48,12 +49,12 @@ DROP TABLE IF EXISTS `STUDENT`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `STUDENT` (
-  `S_ID` int(11) NOT NULL,
-  `Name` varchar(100) DEFAULT NULL,
-  `Email` varchar(100) DEFAULT NULL,
-  `C_ID` int(11) DEFAULT NULL,
-  KEY `STUDENT_FK` (`C_ID`),
-  CONSTRAINT `STUDENT_FK` FOREIGN KEY (`C_ID`) REFERENCES `CLASS` (`C_ID`)
+  `id` int(11) NOT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `c_id` int(11) DEFAULT NULL,
+  KEY `STUDENT_FK` (`c_id`),
+  CONSTRAINT `STUDENT_FK` FOREIGN KEY (`c_id`) REFERENCES `CLASS` (`c_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -63,7 +64,7 @@ CREATE TABLE `STUDENT` (
 
 LOCK TABLES `STUDENT` WRITE;
 /*!40000 ALTER TABLE `STUDENT` DISABLE KEYS */;
-INSERT INTO `STUDENT` VALUES (1,'zain','zenimtiaz@gmail.com',1),(2,'Daryle','darylbecode@gmail.com',1),(3,'sofiane','sofianebecode@gmail.com',1),(4,'neha','nehabecode@gmail.com',2),(5,'nama','namabecode@gmail.com',2);
+INSERT INTO `STUDENT` VALUES (1,'zain','zenimtiaz@gmail.com',101),(2,'Daryle','darylbecode@gmail.com',102),(3,'sofiane','sofianebecode@gmail.com',101),(4,'neha','nehabecode@gmail.com',202),(5,'nama','namabecode@gmail.com',201);
 /*!40000 ALTER TABLE `STUDENT` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -75,9 +76,10 @@ DROP TABLE IF EXISTS `TEACHER`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `TEACHER` (
-  `Name` varchar(100) DEFAULT NULL,
-  `Email` varchar(100) DEFAULT NULL,
-  `C_ID` int(11) DEFAULT NULL
+  `id` int(11) DEFAULT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `c_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -87,7 +89,7 @@ CREATE TABLE `TEACHER` (
 
 LOCK TABLES `TEACHER` WRITE;
 /*!40000 ALTER TABLE `TEACHER` DISABLE KEYS */;
-INSERT INTO `TEACHER` VALUES ('Tim','timbroos@gmail.com',NULL),('sicco','siccosmith@gmail.com',NULL),('sharron','sharon@gmail.com',NULL),('Nick','nickbecode.com',NULL);
+INSERT INTO `TEACHER` VALUES (1,'Tim','timbroos@gmail.com',101),(2,'sicco','siccosmith@gmail.com',102),(3,'sharron','sharon@gmail.com',201),(4,'Nick','nickbecode.com',202);
 /*!40000 ALTER TABLE `TEACHER` ENABLE KEYS */;
 UNLOCK TABLES;
 
