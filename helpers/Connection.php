@@ -107,13 +107,14 @@ class Connection
 
         foreach($columns as $key => $elem) {
             if ($key === count($columns) - 1) {
-                $string .= $elem."=".$values[$key];
+                $string .= $elem."=".'"'.$values[$key].'"';
             } else {
-                $string .= $elem."=".$values[$key] . ",";
+                $string .= $elem."=".'"'.$values[$key].'"'.",";
             }
         }
 
         $data = $this->conn->query("UPDATE $table SET $string WHERE id=$id");
+        var_dump("UPDATE $table SET $string WHERE id=$id");
 
         $info = [];
 

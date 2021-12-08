@@ -61,6 +61,7 @@ class Data
     public function updateOne($id, $values, $table): void
     {
         $this->conn->updateData($id, $values, $table, $this->model->{$table}->{"columns"}, $this->model->{$table}->{"class"});
+        var_dump($id, $values, $table, $this->model->{$table}->{"columns"}, $this->model->{$table}->{"class"});
     }
 
     public function deleteOne($id, $table): void
