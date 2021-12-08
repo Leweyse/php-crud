@@ -5,9 +5,9 @@
 <div class='container'>
      <h2 class='title'>Edit class</h2>
      <form class='form' action="">
-        <input type="text" name='ClassName' placeholder='Class Name'>
+        <input type="text" name='name' placeholder='Class Name'>
         <input type="text" name='location' placeholder='Location'>
-        <select name="class">
+        <select name="selectTeacher">
             <option value="">Teacher</option>
         </select>
         <button>Edit</button>
