@@ -1,6 +1,6 @@
 <?php
- require('../overViewComponents/header.php');
- require('../overViewComponents/displayComponent.php');
+    require "views/public.php";
+    require('views/overViewComponents/header.php');
 ?>
 
 <div class='container'>
@@ -23,7 +23,7 @@
       <tbody class='tbl-content'>
       <?php 
         $dummyData = array("id"=>"35", "className"=>"bob", "Location"=>"Lamarr","AssignedTeacher"=>"Bob", "Students"=>"Students");
-        displayComp($dummyData);
+        row($dummyData, '?class');
       ?>  
       </tbody>
     </table>

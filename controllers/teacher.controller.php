@@ -1,6 +1,8 @@
 <?php
 declare(strict_types = 1);
 
+require "views/public.php";
+
 class teacherController
 {
     function __construct($data) {
@@ -12,18 +14,16 @@ class teacherController
     {
         if ($GET['teacher'] === 'add') {
             if ($_SERVER["REQUEST_METHOD"] === "POST") {
-                // $id = $this->data->getColumnLength("teacher");
-                // $this->data->insertOne([$id,$POST["name"],$POST["email"],$POST["c_id"]], "teacher");
+                $id = $this->data->getColumnLength("teacher");
+                $this->data->insertOne([$id, $POST["name"], $POST["email"], $POST["c_id"]], "teacher");
             }
 
-            require "views/pages/createTeacher.php";
+            require "views/pages/create/createTeacher.php";
         }
 
-        if ($GET === 'remove') {
+        if ($GET['teacher'] === 'remove') {
             if ($_SERVER["REQUEST_METHOD"] === "POST") {
-                $POST["name"];
-                $POST["email"];
-                $POST["c_id"];
+                // $POST["id"];
             }
 
             // Diplay page: If it's necessary
@@ -31,14 +31,20 @@ class teacherController
 
         if ($GET['teacher'] === 'update') {
             if ($_SERVER["REQUEST_METHOD"] === "POST") {
-                $POST["name"];
-                $POST["email"];
-                $POST["c_id"];
+                $this->data->selectOne($POST["id"], "teacher");
             }
 
-            require "views/pages/editTeacher.php";
+            require "views/pages/edit/editTeacher.php";
         }
 
-        require "views/pages/teacher.php";
+        if ($GET['teacher'] === '') {
+            if ($_SERVER["REQUEST_METHOD"] === "POST") {
+                // $POST["name"];
+                // $POST["email"];
+                // $POST["c_id"];
+            }
+
+            require "views/pages/overview/teacher.php";
+        }
     }
 }
