@@ -1,5 +1,5 @@
 <?php 
-    require('./header.php');
+    require('../createComponents/header.php');
 ?>
  <div class='container'>
      <h2 class='title'>create student</h2>

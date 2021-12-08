@@ -10,6 +10,6 @@
 <body>
 <header>
     <nav class='nav'>
-        <a href="../overviewComponents/student.php"><li class='shadow-pop-tr'>Home</li></a>
+        <a href="./student.php"><li class='shadow-pop-tr'>Home</li></a>
     </nav>
 </header>

@@ -1,11 +1,11 @@
 <?php
- require('./header.php');
- require('./displayComponent.php');
+ require('../overViewComponents/header.php');
+ require('../overViewComponents/displayComponent.php');
  
 ?>
 <div class='container'>
-<h2 class='title'>Students</h2>
-<a class='addBtn' href='../createComponents/student.component.php'>+ Create student</a>
+<h2 class='title'>Teachers</h2>
+<a class='addBtn' href='./createTeacher.php'>+ Create teacher</a>
 <section>
 <div class="tbl-header">
     <table >
@@ -14,17 +14,16 @@
           <th>ID</th>
           <th>Name</th>
           <th>Email</th>
-          <th>Class</th>
-          <th>Teacher</th>
+          <th>Students</th>
           <th>Actions</th>
         </tr>
       </thead>
 </div>
       <tbody class='tbl-content'>
         <?php 
-          $dummyData = array("id"=>"35", "name"=>"bob", "email"=>"bob@gmail.com","class"=>"1A","teacher"=>"N.oetri");
+          $dummyData = array("id"=>"35", "name"=>"bob", "email"=>"bob@gmail.com", 'students'=>'students');
           displayComp($dummyData);
-        ?>         
+        ?>  
       </tbody>
     </table>
 </section>

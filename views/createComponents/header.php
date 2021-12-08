@@ -10,9 +10,9 @@
 <body>
 <header>
     <nav class='nav'>
-        <a href="../overviewComponents/student.php"><li class='shadow-pop-tr'>Home</li></a>
-        <a href="student.component.php"><li class='shadow-pop-tr'>Create Student</li></a>
-        <a href="teacher.component.php"><li class='shadow-pop-tr'>Create Teacher</li></a>
-        <a href="class.component.php"><li class='shadow-pop-tr'>Create Class</li></a>
+        <a href="./student.php"><li class='shadow-pop-tr'>Home</li></a>
+        <a href="./createStudent.php"><li class='shadow-pop-tr'>Create Student</li></a>
+        <a href="./createTeacher.php"><li class='shadow-pop-tr'>Create Teacher</li></a>
+        <a href="./createClass.php"><li class='shadow-pop-tr'>Create Class</li></a>
     </nav>
 </header>
