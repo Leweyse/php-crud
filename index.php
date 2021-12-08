@@ -33,11 +33,11 @@ $hostname = getenv('HOSTNAME');
 $conn = new Connection($hostname, $username, $password, $database);
 $data = new Data($conn);
 
-// $data->setOne(2, "student");
+// $data->setOne(1, "class");
 // var_dump($data->getOne());
 
-// $data->setAll("student");
-// var_dump($data->getAll());
+$data->setAll("class");
+var_dump($data->getAll());
 
 require "controllers/student.controller.php";
 require "controllers/teacher.controller.php";

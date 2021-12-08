@@ -2,9 +2,15 @@
 
 Class Teacher
 {
+    private $id;
     private $name;
     private $email;
-    private $class_id;
+    private $c_id;
+
+    public function setId($id): void
+    {
+        $this->id = $id;
+    }
 
     public function setName($name): void
     {
@@ -16,9 +22,14 @@ Class Teacher
         $this->email = $email;
     }
 
-    public function setClassId($class_id): void
+    public function setClassId($c_id): void
     {
-        $this->class_id = $class_id;
+        $this->c_id = $c_id;
+    }
+
+    public function getId()
+    {
+        return $this->id;
     }
 
     public function getName()
@@ -33,6 +44,6 @@ Class Teacher
 
     public function getClassId()
     {
-        return $this->class_id;
+        return $this->c_id;
     }
 }

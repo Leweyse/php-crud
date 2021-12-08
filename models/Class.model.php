@@ -2,9 +2,15 @@
 
 Class ClassInfo
 {
+    private $id;
     private $name;
     private $location;
     private $class_id;
+
+    public function setId($id): void
+    {
+        $this->id = $id;
+    }
 
     public function setName($name): void
     {
@@ -19,6 +25,11 @@ Class ClassInfo
     public function setClassId($class_id): void
     {
         $this->class_id = $class_id;
+    }
+
+    public function getId()
+    {
+        return $this->id;
     }
 
     public function getName()

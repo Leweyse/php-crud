@@ -20,15 +20,15 @@ class Data
 
         $this->model = (object) array(
             'student' => (object) array(
-                "columns" => ["S_ID", "Name", "Email", "C_ID"],
+                "columns" => ["id", "name", "email", "c_id"],
                 "class" => $this->student
             ),
             'teacher' => (object) array(
-                "columns" => ["Name", "Email", "C_ID"],
+                "columns" => ["id", "name", "email", "c_id"],
                 "class" => $this->teacher
             ),
             'class' => (object) array(
-                "columns" => ["ClassName", "Location", "C_ID"],
+                "columns" => ["id", "name", "location", "c_id"],
                 "class" => $this->classInfo
             )
         );

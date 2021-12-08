@@ -34,7 +34,7 @@ class Connection
             }
         }
 
-        $columns = $this->conn->query("SELECT $string FROM $table WHERE S_ID = $id");
+        $columns = $this->conn->query("SELECT $string FROM $table WHERE id = $id");
         $row = $columns->fetch_assoc();
 
         $arrTemp = [];

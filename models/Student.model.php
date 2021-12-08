@@ -2,14 +2,14 @@
 
 Class Student
 {
-    private $student_id;
+    private $id;
     private $name;
     private $email;
-    private $class_id;
+    private $c_id;
 
-    public function setStudentId($student_id): void
+    public function setStudentId($id): void
     {
-        $this->student_id = $student_id;
+        $this->id = $id;
     }
 
     public function setName($name): void
@@ -22,14 +22,14 @@ Class Student
         $this->email = $email;
     }
 
-    public function setClassId($class_id): void
+    public function setClassId($c_id): void
     {
-        $this->class_id = $class_id;
+        $this->c_id = $c_id;
     }
 
     public function getStudentId()
     {
-        return $this->student_id;
+        return $this->id;
     }
 
     public function getName()
@@ -44,6 +44,6 @@ Class Student
 
     public function getClassId()
     {
-        return $this->class_id;
+        return $this->c_id;
     }
 }
