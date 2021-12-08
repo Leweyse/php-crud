@@ -51,12 +51,12 @@ require "controllers/class.controller.php";
 //     $controller = new studentController();
 // }
 
-// if (isset($_GET['teacher'])) {
-//     $controller = new teacherController();
-// }
+if (isset($_GET['teacher'])) {
+    $controller = new teacherController($data);
+}
 
 // if (isset($_GET['class'])) {
 //     $controller = new classController();
 // }
 
-// $controller->render($_GET, $_POST);
+$controller->render($_GET, $_POST);

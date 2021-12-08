@@ -1,5 +1,5 @@
 <?php 
-    require('../createComponents/header.php');
+    require('views/createComponents/header.php');
 ?>
  <div class='container'>
      <h2 class='title'>Create teacher</h2>

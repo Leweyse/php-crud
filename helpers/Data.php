@@ -68,6 +68,11 @@ class Data
         $this->conn->deleteData($id, $table, $this->model->{$table}->{"columns"}, $this->model->{$table}->{"class"});
     }
 
+    public function getColumnLength($table)
+    {
+        return $this->conn->getColLength($table);
+    }
+
     public function getOne(): array
     {
         return $this->one;

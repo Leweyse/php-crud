@@ -1,5 +1,5 @@
 <?php 
-    require('../editComponents/header.php');
+    require('views/editComponents/header.php');
 ?>
 
 <div class='container'>
