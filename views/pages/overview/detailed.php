@@ -1,7 +1,8 @@
 <?php
+    $title = 'Overview';
+
     require('views/headers/overview/header.php');
 
-    $title = 'Teacher';
     $details = ['id' => 1, 'name' => 'Lucas', 'extra' => 'emaglksdjn@aksjdnf.com', 'c_id' => 102];
 ?>
 <section class='detailed_section'>

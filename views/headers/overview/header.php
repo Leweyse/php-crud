@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="views/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">    
-    <title>Students</title>
+    <title><?php echo $title ;?></title>
+
 </head>
 <body>
 <header>

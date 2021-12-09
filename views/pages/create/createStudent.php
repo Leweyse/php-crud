@@ -1,5 +1,6 @@
 <?php 
-    require('views/headers/create/header.php');
+$title = 'Create Student';
+require('views/headers/create/header.php');
 ?>
 
 <div class='container'>
