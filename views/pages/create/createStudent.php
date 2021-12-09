@@ -3,7 +3,7 @@
 ?>
  <div class='container'>
     <h2 class='title'>create student</h2>
-    <form class='form' action="">
+    <form class='form' method="POST">
         <input type="text" name='name' placeholder='Name'>
         <input type="email" name='email' placeholder='Email'>
         <select name="selectClass">

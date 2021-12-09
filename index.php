@@ -43,20 +43,22 @@ $data = new Data($conn);
 // $data->updateOne(3, ["3","Lucas", "aaa@aaa.com", "201"], "student");
 // $data->deleteOne(2, "student");
 
+require "views/public.php";
+
 require "controllers/student.controller.php";
 require "controllers/teacher.controller.php";
 require "controllers/class.controller.php";
 
-// if (isset($_GET['student'])) {
-//     $controller = new studentController();
-// }
+if (isset($_GET['student'])) {
+    $controller = new studentController($data);
+}
 
-// if (isset($_GET['teacher'])) {
-//     $controller = new teacherController($data);
-// }
+if (isset($_GET['teacher'])) {
+    $controller = new teacherController($data);
+}
 
-// if (isset($_GET['class'])) {
-//     $controller = new classController();
-// }
+if (isset($_GET['class'])) {
+    $controller = new classController();
+}
 
-// $controller->render($_GET, $_POST);
+$controller->render($_GET, $_POST);

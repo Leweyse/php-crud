@@ -38,6 +38,6 @@ class studentController
             }
         }
 
-        require "views/createComponents/student.component.php";
+        require "views/pages/overview/student.php";
     }
 }

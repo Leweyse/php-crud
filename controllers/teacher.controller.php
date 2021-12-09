@@ -1,8 +1,6 @@
 <?php
 declare(strict_types = 1);
 
-require "views/public.php";
-
 class teacherController
 {
     function __construct($data) {
