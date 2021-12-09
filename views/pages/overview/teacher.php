@@ -19,17 +19,9 @@
         </div>
         <tbody class='tbl-content'>
             <?php 
-                $dummyData = array("id"=>"35", "name"=>"bob", "email"=>"bob@gmail.com", 'c_id'=>'102');
-                row($dummyData, 'teacher');
-                row($dummyData, 'teacher');
-                row($dummyData, 'teacher');
-                row($dummyData, 'teacher');
-                row($dummyData, 'teacher');
-                row($dummyData, 'teacher');
-                row($dummyData, 'teacher');
-                row($dummyData, 'teacher');
-                row($dummyData, 'teacher');
-                row($dummyData, 'teacher');
+                foreach ($teachers as $key => $value) {
+                    row($value, 'teacher');
+                }
             ?>  
         </tbody>
         </table>

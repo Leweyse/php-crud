@@ -1,11 +1,10 @@
 <?php
-    require "views/public.php";
-    require('views/overViewComponents/header.php');
-?>
+    require('views/headers/overview/header.php');
+    ?>
 
 <div class='container'>
 <h2 class='title'>Classes</h2>
-<a class='addBtn' href='./createClass.php'>+ Create class</a>
+<a class='addBtn' href='?class=add'>+ Create class</a>
 <section>
 <div class="tbl-header">
     <table >
