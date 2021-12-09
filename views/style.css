@@ -263,3 +263,7 @@ td {
     height: 100%;
     place-items: center;
 }
+
+.hideId {
+    display: none;
+}
