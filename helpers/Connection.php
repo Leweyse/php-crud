@@ -29,7 +29,7 @@ class Connection
 
         $columns = $this->conn->query("SELECT $string FROM $table WHERE id = $id");
         $row = $columns->fetch_assoc();
-        var_dump($row);
+
         $arrTemp = [];
 
         foreach ($methods as $key => $value) {
@@ -168,6 +168,19 @@ class Connection
         $result = $this->conn->query("SELECT COUNT(*) FROM $table ");
         $colLength = $result->fetch_assoc();
         return $colLength["COUNT(*)"];
+    }
+
+    public function getColValues ($table): array
+    {
+        $values = [];
+
+        $result = $this->conn->query("SELECT id FROM $table");
+
+        for ($i=0; $i < $this->getColLength($table); $i++) { 
+            $values[$i] = $result->fetch_array()[0];
+        }
+
+        return $values;
     }
 
     // public function testConnection (): void
