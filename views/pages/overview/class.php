@@ -17,11 +17,11 @@
             </tr>
         </thead>    
         <tbody class='tbl-content'>
-        <?php 
-                    foreach ($classes as $key => $value) {
-                        row($value, 'class');
-                    }
-                ?>  
+            <?php
+                foreach ($classes as $key => $value) {
+                    row($value, 'class');
+                }
+            ?>  
         </tbody>
         </table>
     </section>    

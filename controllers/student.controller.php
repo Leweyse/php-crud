@@ -16,7 +16,23 @@ class studentController
 
         if ($GET['student'] === 'delete') {
             $this->data->deleteOne($POST['id'], "student");
-            header('Location: ?student');  
+
+            $ids = $this->data->getColumnValues("id", "student");
+            $names = $this->data->getColumnValues("name", "student");
+            $emails = $this->data->getColumnValues("email", "student");
+            $c_id = $this->data->getColumnValues("c_id", "student");
+
+            $newIds=[];
+
+            for ($i=1; $i <= count($ids); $i++) {
+                array_push($newIds, $i);
+            }
+
+            foreach ($ids as $key => $value) {
+                $this->data->updateId($value, [$newIds[$key], $names[$key], $emails[$key], $c_id[$key]], "student");
+            }
+
+            header('Location: ?student');
         }
 
         if ($GET['student'] === 'update') {

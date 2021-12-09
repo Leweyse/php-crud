@@ -69,6 +69,11 @@ class Data
         $this->conn->updateData($id, $values, $table, $columns);
     }
 
+    public function updateId($id, $values, $table): void
+    {
+        $this->conn->updateData($id, $values, $table, $this->model->{$table}->{"columns"});
+    }
+
     public function deleteOne($id, $table): void
     {
         $this->conn->deleteData($id, $table, $this->model->{$table}->{"columns"});

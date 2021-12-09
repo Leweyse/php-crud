@@ -16,6 +16,22 @@ class teacherController
 
         if ($GET['teacher'] === 'delete') {
             $this->data->deleteOne($POST['id'], "teacher");
+
+            $ids = $this->data->getColumnValues("id", "teacher");
+            $names = $this->data->getColumnValues("name", "teacher");
+            $emails = $this->data->getColumnValues("email", "teacher");
+            $c_id = $this->data->getColumnValues("c_id", "teacher");
+
+            $newIds=[];
+
+            for ($i=1; $i <= count($ids); $i++) {
+                array_push($newIds, $i);
+            }
+
+            foreach ($ids as $key => $value) {
+                $this->data->updateId($value, [$newIds[$key], $names[$key], $emails[$key], $c_id[$key]], "teacher");
+            }
+
             header('Location: ?teacher');
         }
 

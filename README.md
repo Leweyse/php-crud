@@ -18,6 +18,17 @@ While is an old style of approaching applications, with new ways of thinking (Do
 - To be able to write a simple Create, Read, Update & Delete (CRUD) application :heavy_check_mark:
 - Use a provided MVC structure to work into. :heavy_check_mark:
 
+### Add ``` .env ``` file
+ - Before working on this project locally create a .env file in the root of the project. Add the Hostname, Username, Password and Database information from your local device.
+
+```ruby
+HOSTNAME=xxxx
+USERNAME=xxxx
+PASSWORD=xxxx
+DATABASE=xxxx
+
+```
+
 ## Features
  Pages for Students, Teacher & Class.
 
@@ -46,14 +57,3 @@ While is an old style of approaching applications, with new ways of thinking (Do
 - Name class (Giertz, Lamarr, ...)
 - Location (Antwerp, Gent, Genk, Brussels, Liege)
 - Assigned teacher 
- 
-### Add ``` .env ``` file
- - Before working on this project locally create a .env file in the root of the project. Add the Hostname, Username, Password and Database information from your local device.
-
-```ruby
-HOSTNAME=xxxx
-USERNAME=xxxx
-PASSWORD=xxxx
-DATABASE=xxxx
-
-```
