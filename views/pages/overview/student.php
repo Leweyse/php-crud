@@ -1,7 +1,5 @@
 <?php
-    require "views/public.php";
-    require('views/headers/overViewComponents/header.php');
- 
+    require('views/headers/overview/header.php');
 ?>
 <div class='container'>
 <h2 class='title'>Students</h2>

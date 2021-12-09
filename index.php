@@ -49,9 +49,9 @@ require "controllers/student.controller.php";
 require "controllers/teacher.controller.php";
 require "controllers/class.controller.php";
 
-// if (isset($_GET['student'])) {
-//     $controller = new studentController();
-// }
+if (isset($_GET['student'])) {
+    $controller = new studentController($data);
+}
 
 if (isset($_GET['teacher'])) {
     $controller = new teacherController($data);
