@@ -57,8 +57,8 @@ if (isset($_GET['teacher'])) {
     $controller = new teacherController($data);
 }
 
-// if (isset($_GET['class'])) {
-//     $controller = new classController();
-// }
+if (isset($_GET['class'])) {
+    $controller = new classController($data);
+}
 
 $controller->render($_GET, $_POST);
