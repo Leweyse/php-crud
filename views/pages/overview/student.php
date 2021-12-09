@@ -3,7 +3,7 @@
 ?>
 <div class='container'>
 <h2 class='title'>Students</h2>
-<a class='addBtn' href='./createStudent.php'>+ Create student</a>
+<a class='addBtn' href='?student=add''>+ Create student</a>
 <section>
 <div class="tbl-header">
     <table >
@@ -13,16 +13,16 @@
           <th>Name</th>
           <th>Email</th>
           <th>Class</th>
-          <th>Teacher</th>
           <th>Actions</th>
         </tr>
       </thead>
 </div>
       <tbody class='tbl-content'>
-        <?php 
-          $dummyData = array("id"=>"35", "name"=>"bob", "email"=>"bob@gmail.com","class"=>"1A","teacher"=>"N.oetri");
-          row($dummyData, '?student');
-        ?>         
+      <?php 
+        foreach ($student as $key => $value) {
+            row($value, 'student');
+        }
+      ?>          
       </tbody>
     </table>
 </section>
