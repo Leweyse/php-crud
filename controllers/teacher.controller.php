@@ -11,7 +11,6 @@ class teacherController
     {
         if ($GET['teacher'] === 'add') {
             $classes = $this->data->getColumnValues("c_id", "class");
-
             require "views/pages/create/createTeacher.php";
         }
 

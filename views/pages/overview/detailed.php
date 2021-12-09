@@ -1,8 +1,5 @@
 <?php
-    // require('views/headers/overview/header.php');
-
-    require('../../headers/overview/header.php');
-    require('../../components/paragraph.component.php');
+    require('views/headers/overview/header.php');
 
     $title = 'Teacher';
     $details = ['id' => 1, 'name' => 'Lucas', 'extra' => 'emaglksdjn@aksjdnf.com', 'c_id' => 102];
