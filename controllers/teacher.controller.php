@@ -7,7 +7,6 @@ class teacherController
         $this->data = $data;
     }
 
-    //render function with both $_GET and $_POST vars available if it would be needed.
     public function render(array $GET, array $POST)
     {
         if ($GET['teacher'] === 'add') {
@@ -38,10 +37,6 @@ class teacherController
 
             if (isset($POST['update'])) {
                 $this->data->updateOne($POST['id'], [$POST['name'], $POST['email'], $POST['c_id']], "teacher");
-            }
-
-            if (isset($POST['delete'])) {
-                var_dump($POST);
             }
 
             $this->data->selectAll("teacher");
