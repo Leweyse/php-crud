@@ -1,5 +1,7 @@
 <?php
+    $title = 'Student';
     require('views/headers/overview/header.php');
+
 ?>
 
 <div class='container'>

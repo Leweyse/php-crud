@@ -11,16 +11,27 @@ class classController
     public function render(array $GET, array $POST)
     {
         if ($GET['class'] === 'add') {
-            if ($_SERVER["REQUEST_METHOD"] === "POST") {
-                $id = $this->data->getColumnLength("class");
-                $this->data->insertOne([$id, $POST["name"], $POST["location"], $POST["c_id"]], "class");
-            }
-
             require "views/pages/create/createClass.php";
         }
 
         if ($GET['class'] === 'delete') {
             $this->data->deleteOne($POST['id'], "class");
+
+            $ids = $this->data->getColumnValues("id", "class");
+            $names = $this->data->getColumnValues("name", "class");
+            $locations = $this->data->getColumnValues("location", "class");
+            $c_id = $this->data->getColumnValues("c_id", "class");
+
+            $newIds=[];
+
+            for ($i=1; $i <= count($ids); $i++) {
+                array_push($newIds, $i);
+            }
+
+            foreach ($ids as $key => $value) {
+                $this->data->updateId($value, [$newIds[$key], $names[$key], $locations[$key], $c_id[$key]], "class");
+            }
+
             header('Location: ?class');
         }
 
@@ -45,6 +56,7 @@ class classController
 
             $this->data->selectAll("class");
             $classes = $this->data->getAll();
+            asort($classes);
 
             require "views/pages/overview/class.php";
         }
