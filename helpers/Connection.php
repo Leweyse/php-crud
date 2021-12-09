@@ -45,10 +45,8 @@ class Connection
         }
     }
 
-    public function insertData(array $values, string $table, array $columns, $class)
+    public function insertData(array $values, string $table, array $columns)
     {
-        $methods = get_class_methods($class);
-
         $columnString = '';
         $valueString = '';
 
@@ -77,32 +75,10 @@ class Connection
         }
 
         $data = $this->conn->query("INSERT INTO $table($columnString) VALUES($valueString)");
-
-        $info = [];
-
-        foreach ($columns as $key => $value) {
-            $info[$value] = $values[$key];
-        }
-
-        $arrTemp = [];
-
-        foreach ($methods as $key => $value) {
-            if ($key < count($columns)) {
-                $class -> $value($info[(string)$columns[$key]]);
-            } else {
-                $arrTemp[$columns[$key % (count($methods) / 2)]] = $class -> $value();
-                if (count($arrTemp) === count($methods) / 2) {
-                    $this->arrayData[] = $arrTemp;
-                    return $arrTemp;
-                }
-            }
-        }
     }
 
-    public function updateData(int $id, array $values, string $table, array $columns, $class)
+    public function updateData(int $id, array $values, string $table, array $columns)
     {
-        $methods = get_class_methods($class);
-
         $string = '';
 
         foreach($columns as $key => $elem) {
@@ -114,32 +90,10 @@ class Connection
         }
 
         $data = $this->conn->query("UPDATE $table SET $string WHERE id=$id");
-
-        $info = [];
-
-        foreach ($columns as $key => $value) {
-            $info[$value] = $values[$key];
-        }
-
-        $arrTemp = [];
-
-        foreach ($methods as $key => $value) {
-            if ($key < count($columns)) {
-                $class -> $value($info[(string)$columns[$key]]);
-            } else {
-                $arrTemp[$columns[$key % (count($methods) / 2)]] = $class -> $value();
-                if (count($arrTemp) === count($methods) / 2) {
-                    $this->arrayData[] = $arrTemp;
-                    return $arrTemp;
-                }
-            }
-        }
     }
 
-    public function deleteData(int $id, string $table, array $column, $class)
+    public function deleteData(int $id, string $table, array $column)
     {
-        $methods = get_class_methods($class);
-
         $string = '';
 
         foreach($column as $key => $elem) {
@@ -170,11 +124,11 @@ class Connection
         return $colLength["COUNT(*)"];
     }
 
-    public function getColValues ($table): array
+    public function getColValues($column, $table): array
     {
         $values = [];
 
-        $result = $this->conn->query("SELECT id FROM $table");
+        $result = $this->conn->query("SELECT $column FROM $table");
 
         for ($i=0; $i < $this->getColLength($table); $i++) { 
             $values[$i] = $result->fetch_array()[0];

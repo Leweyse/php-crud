@@ -11,6 +11,8 @@ class teacherController
     public function render(array $GET, array $POST)
     {
         if ($GET['teacher'] === 'add') {
+            $classes = $this->data->getColumnValues("c_id", "class");
+
             require "views/pages/create/createTeacher.php";
         }
 
@@ -21,6 +23,8 @@ class teacherController
         if ($GET['teacher'] === 'update') {
             $this->data->selectOne($POST['id'], "teacher");
             $data = array('id' => $POST['id'], "info" => $this->data->getOne());
+
+            $classes = $this->data->getColumnValues("c_id", "class");
 
             require "views/pages/edit/editTeacher.php";
         }

@@ -43,7 +43,7 @@ class Data
 
     public function selectAll($table): void
     {
-        $colValues = $this->conn->getColValues($table);
+        $colValues = $this->conn->getColValues("id", $table);
 
         foreach ($colValues as $key => $value) {
             $this->conn->selectData((int)$value, $table, $this->model->{$table}->{"columns"}, $this->model->{$table}->{"class"});
@@ -55,22 +55,33 @@ class Data
 
     public function insertOne($values, $table): void
     {
-        $this->conn->insertData($values, $table, $this->model->{$table}->{"columns"}, $this->model->{$table}->{"class"});
+        $this->conn->insertData($values, $table, $this->model->{$table}->{"columns"});
     }
 
     public function updateOne($id, $values, $table): void
     {
-        $this->conn->updateData($id, $values, $table, $this->model->{$table}->{"columns"}, $this->model->{$table}->{"class"});
+        $columns = [
+            $this->model->{$table}->{"columns"}[1],
+            $this->model->{$table}->{"columns"}[2],
+            $this->model->{$table}->{"columns"}[3]
+        ];
+
+        $this->conn->updateData($id, $values, $table, $columns);
     }
 
     public function deleteOne($id, $table): void
     {
-        $this->conn->deleteData($id, $table, $this->model->{$table}->{"columns"}, $this->model->{$table}->{"class"});
+        $this->conn->deleteData($id, $table, $this->model->{$table}->{"columns"});
     }
 
     public function getColumnLength($table)
     {
         return $this->conn->getColLength($table);
+    }
+
+    public function getColumnValues($column, $table)
+    {
+        return $this->conn->getColValues($column, $table);
     }
 
     public function getOne(): array
