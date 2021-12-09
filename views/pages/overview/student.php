@@ -3,7 +3,7 @@
 ?>
 <div class='container'>
 <h2 class='title'>Students</h2>
-<a class='addBtn' href='./createStudent.php'>+ Create student</a>
+<a class='addBtn' href='?student=add''>+ Create student</a>
 <section>
 <div class="tbl-header">
     <table >

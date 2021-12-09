@@ -10,21 +10,13 @@ class studentController
     public function render(array $GET, array $POST)
     {
         if ($GET["student"] === 'add') {
-            if ($_SERVER["REQUEST_METHOD"] === "POST") {
-               $id= $POST["id"];
-               $name= $POST["name"];
-               $email= $POST["email"];
-               $c_id=$POST["c_id"];
+            $classes = $this->data->getColumnValues("c_id", "class");
+            require "views/pages/create/createStudent.php";
         }
-    }
 
-        if ($GET === 'remove') {
-            if ($_SERVER["REQUEST_METHOD"] === "POST") {
-                $POST["studentName"];
-                $POST["email"];
-                $POST["class"];
-                $POST["teacher"];
-            }
+        if ($GET['student'] === 'delete') {
+            $this->data->deleteOne($POST['id'], "student");
+            header('Location: ?student');  
         }
 
         if ($GET['student'] === 'update') {
