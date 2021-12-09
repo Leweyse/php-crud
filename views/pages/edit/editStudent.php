@@ -3,7 +3,7 @@
 ?>
 
 <div class='container'>
-     <h2 class='title'>Edit student</h2>
+    <h2 class='title'>Edit student</h2>
     <form class='form' action="?student" method='POST'>
         <input type="text" name="id" value=<?php echo $data['id'] ?> readonly>
         <input type="text" name='name' placeholder='Name' value=<?php echo $data['info']['name'] ?>>

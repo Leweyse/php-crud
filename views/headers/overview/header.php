@@ -10,9 +10,9 @@
 </head>
 <body>
 <header>
-        <nav class='nav'>
-            <a href="?student"><li class='shadow-pop-tr'>Students</li></a>
-            <a href="?teacher"><li class='shadow-pop-tr'>Teachers</li></a>
-            <a href="?class"><li class='shadow-pop-tr'>Classes</li></a>
-        </nav>
+    <nav class='nav'>
+        <a href="?student"><li class='shadow-pop-tr'>Students</li></a>
+        <a href="?teacher"><li class='shadow-pop-tr'>Teachers</li></a>
+        <a href="?class"><li class='shadow-pop-tr'>Classes</li></a>
+    </nav>
 </header>
