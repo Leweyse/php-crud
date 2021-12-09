@@ -1,5 +1,6 @@
 <?php
-    require('views/headers/overview/header.php');
+$title = 'Class';
+require('views/headers/overview/header.php');
 ?>
 
 <div class='container'>

@@ -1,7 +1,7 @@
 <?php 
-    require('views/headers/create/header.php');
+ $title = 'Create Class';
+require('views/headers/create/header.php');
 ?>
-
 <div class='container'>
     <h2 class='title' >Create Class</h2>
     <form class='form' method= "POST" action="?class">

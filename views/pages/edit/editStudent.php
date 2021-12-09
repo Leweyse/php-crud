@@ -1,4 +1,5 @@
 <?php 
+    $title = 'Edit Student';
     require('views/headers/edit/header.php');
 ?>
 
