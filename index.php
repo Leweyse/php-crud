@@ -45,9 +45,12 @@ $data = new Data($conn);
 
 require "views/public.php";
 
+require "controllers/home.controller.php";
 require "controllers/student.controller.php";
 require "controllers/teacher.controller.php";
 require "controllers/class.controller.php";
+
+$controller = new homeController();
 
 if (isset($_GET['student'])) {
     $controller = new studentController($data);
