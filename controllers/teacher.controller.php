@@ -16,8 +16,9 @@ class teacherController
             require "views/pages/create/createTeacher.php";
         }
 
-        if ($GET['teacher'] === 'remove') {
-            // Diplay page: If it's necessary
+        if ($GET['teacher'] === 'delete') {
+            $this->data->deleteOne($POST['id'], "teacher");
+            header('Location: ?teacher');
         }
 
         if ($GET['teacher'] === 'update') {
