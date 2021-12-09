@@ -13,17 +13,17 @@
           <th>ID</th>
           <th>ClassName</th>
           <th>Location</th>
-          <th>Assigned teacher</th>
-          <th>Students</th>
+        <th>Class Code</th> 
           <th>Actions</th>
         </tr>
       </thead>
 </div>
       <tbody class='tbl-content'>
       <?php 
-        $dummyData = array("id"=>"35", "className"=>"bob", "Location"=>"Lamarr","AssignedTeacher"=>"Bob", "Students"=>"Students");
-        row($dummyData, '?class');
-      ?>  
+                foreach ($classes as $key => $value) {
+                    row($value, 'class');
+                }
+            ?>  
       </tbody>
     </table>
 </section>
