@@ -30,6 +30,7 @@ class studentController
         if ($GET['student'] === 'update') {
                 $this->data->selectOne($POST['id'], "student");
                 $data = array('id' => $POST['id'], "info" => $this->data->getOne());
+                $classes = $this->data->getColumnValues("c_id", "class");
             require "views/pages/edit/editStudent.php";
         }
 
