@@ -43,10 +43,10 @@ class Data
 
     public function selectAll($table): void
     {
-        $colLength = (int)$this->conn->getColLength($table);
+        $colValues = $this->conn->getColValues($table);
 
-        for ($i = 1; $i <= $colLength; $i++) {
-            $this->conn->selectData($i, $table, $this->model->{$table}->{"columns"}, $this->model->{$table}->{"class"});
+        foreach ($colValues as $key => $value) {
+            $this->conn->selectData((int)$value, $table, $this->model->{$table}->{"columns"}, $this->model->{$table}->{"class"});
         }
 
         $this->all = $this->conn->getData();
@@ -75,7 +75,7 @@ class Data
 
     public function getOne(): array
     {
-        return $this->one;
+        return $this->one[0];
     }
 
     public function getAll(): array
