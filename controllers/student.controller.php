@@ -6,7 +6,7 @@ class studentController
     function __construct($data) {
         $this->data = $data;
     }
-    //render function with both $_GET and $_POST vars available if it would be needed.
+
     public function render(array $GET, array $POST)
     {
         if ($GET["student"] === 'add') {
@@ -20,12 +20,12 @@ class studentController
         }
 
         if ($GET['student'] === 'update') {
-                $this->data->selectOne($POST['id'], "student");
-                $data = array('id' => $POST['id'], "info" => $this->data->getOne());
-                $classes = $this->data->getColumnValues("c_id", "class");
+            $this->data->selectOne($POST['id'], "student");
+            $data = array('id' => $POST['id'], "info" => $this->data->getOne());
+            $classes = $this->data->getColumnValues("c_id", "class");
+
             require "views/pages/edit/editStudent.php";
         }
-
         
         if ($GET['student'] === '') {
             if (isset($POST['add'])) {
@@ -46,6 +46,5 @@ class studentController
 
             require "views/pages/overview/student.php";
         }
-
     }
 }

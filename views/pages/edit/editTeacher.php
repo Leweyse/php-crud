@@ -1,7 +1,5 @@
 <?php 
     require('views/headers/overview/header.php');
-
-    $fakeData = [array("id"=>"35", "name"=>"bob", "email"=>"bob@gmail.com", 'c_id'=>'102'), array("id"=>"11", "name"=>"bob", "email"=>"bob@gmail.com", 'c_id'=>'201'), array("id"=>"12", "name"=>"bob", "email"=>"bob@gmail.com", 'c_id'=>'103')];
 ?>
 
 <div class='container'>
