@@ -1,7 +1,6 @@
 <?php
 declare(strict_types = 1);
 
-
 class teacherController
 {
     function __construct($data) {
@@ -12,36 +11,36 @@ class teacherController
     public function render(array $GET, array $POST)
     {
         if ($GET['teacher'] === 'add') {
-            if ($_SERVER["REQUEST_METHOD"] === "POST") {
-                $id = $this->data->getColumnLength("teacher");
-                $this->data->insertOne([$id, $POST["name"], $POST["email"], $POST["c_id"]], "teacher");
-            }
-
             require "views/pages/create/createTeacher.php";
         }
 
         if ($GET['teacher'] === 'remove') {
-            if ($_SERVER["REQUEST_METHOD"] === "POST") {
-                // $POST["id"];
-            }
-
             // Diplay page: If it's necessary
         }
 
         if ($GET['teacher'] === 'update') {
-            if ($_SERVER["REQUEST_METHOD"] === "POST") {
-                $this->data->selectOne($POST["id"], "teacher");
-            }
+            $this->data->selectOne($POST['id'], "teacher");
+            $data = array('id' => $POST['id'], "info" => $this->data->getOne());
 
             require "views/pages/edit/editTeacher.php";
         }
 
         if ($GET['teacher'] === '') {
-            if ($_SERVER["REQUEST_METHOD"] === "POST") {
-                // $POST["name"];
-                // $POST["email"];
-                // $POST["c_id"];
+            if (isset($POST['add'])) {
+                $id = $this->data->getColumnLength("teacher") + 1;
+                $this->data->insertOne([$id, $POST["name"], $POST["email"], $POST["c_id"]], "teacher");
             }
+
+            if (isset($POST['update'])) {
+                $this->data->updateOne($POST['id'], [$POST['name'], $POST['email'], $POST['c_id']], "teacher");
+            }
+
+            if (isset($POST['delete'])) {
+                var_dump($POST);
+            }
+
+            $this->data->selectAll("teacher");
+            $teachers = $this->data->getAll();
 
             require "views/pages/overview/teacher.php";
         }
