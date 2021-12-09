@@ -7,20 +7,24 @@ class teacherController
         $this->data = $data;
     }
 
-    //render function with both $_GET and $_POST vars available if it would be needed.
     public function render(array $GET, array $POST)
     {
         if ($GET['teacher'] === 'add') {
+            $classes = $this->data->getColumnValues("c_id", "class");
+
             require "views/pages/create/createTeacher.php";
         }
 
-        if ($GET['teacher'] === 'remove') {
-            // Diplay page: If it's necessary
+        if ($GET['teacher'] === 'delete') {
+            $this->data->deleteOne($POST['id'], "teacher");
+            header('Location: ?teacher');
         }
 
         if ($GET['teacher'] === 'update') {
             $this->data->selectOne($POST['id'], "teacher");
             $data = array('id' => $POST['id'], "info" => $this->data->getOne());
+
+            $classes = $this->data->getColumnValues("c_id", "class");
 
             require "views/pages/edit/editTeacher.php";
         }
@@ -33,10 +37,6 @@ class teacherController
 
             if (isset($POST['update'])) {
                 $this->data->updateOne($POST['id'], [$POST['name'], $POST['email'], $POST['c_id']], "teacher");
-            }
-
-            if (isset($POST['delete'])) {
-                var_dump($POST);
             }
 
             $this->data->selectAll("teacher");
